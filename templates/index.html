@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BBC News Classification</title>
+</head>
+<body>
+    <h1>BBC News Classification</h1>
+    <form action="/classify" method="post">
+        <label for="text">Article Text:</label><br>
+        <textarea id="text" name="text" rows="10" cols="50">{{ text if text else '' }}</textarea><br><br>
+        <input type="submit" value="Classify">
+    </form>
+
+    {% if prediction_text %}
+        <h2>Classification Result</h2>
+        <p><strong>Article Text:</strong></p>
+        <p>{{ text }}</p>
+        <p><strong>{{ prediction_text }}</strong></p>
+    {% endif %}
+</body>
+</html>
